@@ -61,3 +61,4 @@ gem 'hirb-unicode' # 日本語などマルチバイト文字の出力時の出�
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+gem "devise"
