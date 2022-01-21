@@ -2,23 +2,25 @@
 <div class="container py-5 h-100">
   <div class="row">
     <div class="col-md-6 mx-auto">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signup"}) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signup"}) do |f| %>
 
-      <h2 class="form-signup-heading text-center mb-4">新規登録</h2>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= f.label :username, 'username', class: 'sr-only' %>
-      <%= f.text_field :username, autofocus: true, class: 'form-control mb-2', placeholder: 'お名前' %>
+        <h2 class="form-signup-heading text-center mb-4">新規登録</h2>
 
-      <%= f.label :email, 'Email Address', class: 'sr-only' %>
-      <%= f.email_field :email, autofocus: true, class: 'form-control mb-2', placeholder: 'メールアドレス' %>
+        <%= f.label :username, 'username', class: 'sr-only' %>
+        <%= f.text_field :username, autofocus: true, class: 'form-control mb-2', placeholder: 'お名前' %>
 
-      <%= f.label :password, 'Password', class: 'sr-only' %>
-      <%= f.password_field :password, autocomplete: "new-password", class: 'form-control mb-2', placeholder: 'パスワード' %>
+        <%= f.label :email, 'Email Address', class: 'sr-only' %>
+        <%= f.email_field :email, autofocus: true, class: 'form-control mb-2', placeholder: 'メールアドレス' %>
 
-    <%= f.label :password_confirmation, 'password_confirmation', class: 'sr-only' %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-2', placeholder: 'もう１度パスワード' %>
+        <%= f.label :password, 'Password', class: 'sr-only' %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control mb-2', placeholder: 'パスワード' %>
 
-      <%= f.submit "登録", class: 'btn btn-lg btn-primary btn-block' %>
+        <%= f.label :password_confirmation, 'password_confirmation', class: 'sr-only' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-2', placeholder: 'もう１度パスワード' %>
+
+        <%= f.submit "登録", class: 'btn btn-lg btn-primary btn-block' %>
       <% end %>
       <%= render "devise/shared/links" %>
     </div>
