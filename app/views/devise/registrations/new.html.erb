@@ -13,10 +13,10 @@
       <%= f.email_field :email, autofocus: true, class: 'form-control mb-2', placeholder: 'メールアドレス' %>
 
       <%= f.label :password, 'Password', class: 'sr-only' %>
-      <%= f.password_field :password, autocomplete: "off", class: 'form-control mb-2', placeholder: 'パスワード' %>
+      <%= f.password_field :password, autocomplete: "new-password", class: 'form-control mb-2', placeholder: 'パスワード' %>
 
     <%= f.label :password_confirmation, 'password_confirmation', class: 'sr-only' %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control mb-2', placeholder: 'もう１度パスワード' %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-2', placeholder: 'もう１度パスワード' %>
 
       <%= f.submit "登録", class: 'btn btn-lg btn-primary btn-block' %>
       <% end %>
