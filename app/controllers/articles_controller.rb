@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def new
@@ -13,6 +14,8 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user_id = current_user.id
     @article.save
+    # @article.create
+    # @article = Article.create(article_params)
     redirect_to @article
   end
   

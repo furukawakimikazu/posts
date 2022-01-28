@@ -1,2 +1,18 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container py-5 h-100">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+
+      <div class="card" style="width: 40rem;">
+
+        <%= attachment_image_tag @article, :image, class: "card-img-top" %>
+
+        <div class="card-body text-center mb-4">
+          <h4 class="card-title"><%= @article.title %></h4>
+          <p class="card-text"><%= simple_format @article.body %></p>
+          <%= link_to '編集', edit_article_path(@article), class: 'btn btn-primary' %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

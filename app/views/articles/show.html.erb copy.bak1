@@ -1,0 +1,8 @@
+<h1>Articles#show</h1>
+<p>Find me in app/views/articles/show.html.erb</p>
+
+<%= attachment_image_tag @article, :image %>
+
+<%= @article.title %>
+
+<%= simple_format @article.body %>
