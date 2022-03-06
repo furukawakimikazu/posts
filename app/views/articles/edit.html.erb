@@ -1,18 +1,23 @@
 <div class="container py-5 h-100">
   <div class="row">
     <div class="col-md-6 mx-auto">
-
+      <%= form_with model: @article do |f| %>
       <div class="card" style="width: 40rem;">
-
-        <%= attachment_image_tag @article, :image, class: "card-img-top" %>
+        <%= f.label :image, '写真' %>
+        <%= f.attachment_field :image, class: "card-img-top" %>
 
         <div class="card-body text-center mb-4">
-          <h4 class="card-title"><%= @article.title %></h4>
-          <p class="card-text"><%= simple_format @article.body %></p>
-          <%= link_to '編集', edit_article_path(@article), class: 'btn btn-primary' %>
+          <h4 class="card-title">
+            <%= f.text_field :title %>
+          </h4>
+          <p class="card-text">
+            <%= f.text_area :body %>
+          </p>
+          <%= link_to '詳細ページ', @article, class: 'btn btn-primary' %>
         </div>
 
       </div>
+      <% end %>
     </div>
   </div>
 </div>
